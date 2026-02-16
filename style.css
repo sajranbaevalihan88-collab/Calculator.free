@@ -1,0 +1,178 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    /* Убираем отступы по умолчанию */
+}
+
+.calculator {
+    background-color: #333;
+    border-radius: 15px;
+    /* Слегка скруглим углы */
+    padding: 25px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    width: 320px;
+    /* Немного шире */
+    border: 1px solid #222;
+}
+
+#display {
+    width: 100%;
+    height: 70px;
+    /* Немного выше */
+    font-size: 2.5em;
+    /* Крупнее шрифт */
+    text-align: right;
+    padding: 10px 15px;
+    margin-bottom: 25px;
+    /* Больше отступ снизу */
+    border: none;
+    border-radius: 8px;
+    background-color: #eee;
+    color: #333;
+    box-sizing: border-box;
+    font-weight: 300;
+    /* Более легкий шрифт */
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* 4 колонки */
+    gap: 12px;
+    /* Расстояние между кнопками */
+}
+
+.btn {
+    background-color: #5a5a5a;
+    /* Темнее фон кнопок */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    /* Скруглим кнопки */
+    font-size: 1.4em;
+    /* Размер шрифта */
+    padding: 18px 0;
+    /* Вертикальный padding */
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 -2px 4px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.2);
+    /* Небольшая тень */
+}
+
+.btn:hover {
+    background-color: #707070;
+    /* Светлее при наведении */
+}
+
+.btn:active {
+    background-color: #4a4a4a;
+    /* Еще темнее при нажатии */
+    transform: translateY(1px);
+    /* Легкий эффект нажатия */
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Цвета для специальных кнопок */
+.operator {
+    background-color: #f89a21;
+}
+
+/* Оранжевый */
+.operator:hover {
+    background-color: #e08a1a;
+}
+
+.operator:active {
+    background-color: #c07a1a;
+}
+
+.equals {
+    background-color: #4CAF50;
+}
+
+/* Зеленый */
+.equals:hover {
+    background-color: #45a049;
+}
+
+.equals:active {
+    background-color: #3e8e41;
+}
+
+.clear {
+    background-color: #d9534f;
+}
+
+/* Красный (AC) */
+.clear:hover {
+    background-color: #c9434f;
+}
+
+.clear:active {
+    background-color: #b9334f;
+}
+
+.clear-entry {
+    background-color: #f0ad4e;
+}
+
+/* Оранжевый (CE) */
+.clear-entry:hover {
+    background-color: #e0a040;
+}
+
+.clear-entry:active {
+    background-color: #c08a30;
+}
+
+.function {
+    background-color: #5bc0de;
+}
+
+/* Голубой (+/-) */
+.function:hover {
+    background-color: #4aa3c3;
+}
+
+.function:active {
+    background-color: #3c8cb3;
+}
+
+/* Кнопка 0 занимает 2 колонки */
+.zero {
+    grid-column: span 2;
+}
+
+/* Убираем тень у кнопки = */
+.equals {
+    box-shadow: none;
+}
+
+/* Убираем тень у кнопок операторов */
+.operator {
+    box-shadow: inset 0 -2px 4px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.2);
+    /* Оставляем тень */
+}
+
+.clear,
+.clear-entry,
+.function {
+    box-shadow: inset 0 -2px 4px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.2);
+    /* Оставляем тень */
+}
+
+
+/* Стили для disabled поля */
+#display:disabled {
+    background-color: #ccc;
+    color: #333;
+    opacity: 0.9;
+}

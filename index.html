@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Улучшенный Калькулятор</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="calculator">
+        <input type="text" id="display" disabled>
+        <div class="buttons">
+            <!-- Верхний ряд: AC, CE, %, / -->
+            <button class="btn clear" onclick="clearAll()">AC</button>
+            <button class="btn clear-entry" onclick="clearEntry()">CE</button>
+            <button class="btn operator" onclick="calculatePercentage()">%</button>
+            <button class="btn operator" onclick="setOperator('/')">/</button>
+
+            <!-- Второй ряд: 7, 8, 9, * -->
+            <button class="btn" onclick="appendNumber('7')">7</button>
+            <button class="btn" onclick="appendNumber('8')">8</button>
+            <button class="btn" onclick="appendNumber('9')">9</button>
+            <button class="btn operator" onclick="setOperator('*')">*</button>
+
+            <!-- Третий ряд: 4, 5, 6, - -->
+            <button class="btn" onclick="appendNumber('4')">4</button>
+            <button class="btn" onclick="appendNumber('5')">5</button>
+            <button class="btn" onclick="appendNumber('6')">6</button>
+            <button class="btn operator" onclick="setOperator('-')">-</button>
+
+            <!-- Четвертый ряд: 1, 2, 3, + -->
+            <button class="btn" onclick="appendNumber('1')">1</button>
+            <button class="btn" onclick="appendNumber('2')">2</button>
+            <button class="btn" onclick="appendNumber('3')">3</button>
+            <button class="btn operator" onclick="setOperator('+')">+</button>
+
+            <!-- Нижний ряд: +/-, 0, ., = -->
+            <button class="btn function" onclick="toggleSign()">+/-</button>
+            <button class="btn zero" onclick="appendNumber('0')">0</button>
+            <button class="btn" onclick="appendDecimal()">.</button>
+            <button class="btn equals" onclick="calculateResult()">=</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
